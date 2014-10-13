@@ -1,0 +1,16 @@
+<h1>
+    A total of {{dictCount}} Dictionaries are available
+    <small>
+        <button class="btn btn-link glyphicon glyphicon-search" data-toggle="modal" data-target=".lookup-modal"></button>
+        <a href="/" class="btn btn-link glyphicon glyphicon-home"></a>
+    </small>
+</h1>
+{{> lookup-word-modal}}
+
+<ol>
+    {{#each dictionaries}}
+      <li>
+          <strong>{{this.Id}}</strong>: {{this.Name}}
+      </li>
+    {{/each}}
+</ol>

@@ -1,0 +1,27 @@
+<h1>
+    Found {{defCount}} Definitions for "<strong>{{word}}</strong>"
+    <small>
+        <button class="btn btn-link glyphicon glyphicon-search" data-toggle="modal" data-target=".lookup-modal"></button>
+        <a href="/" class="btn btn-link glyphicon glyphicon-home"></a>
+    </small>
+</h1>
+{{> lookup-word-modal}}
+<hr>
+<dl>
+    {{#each definitions}}
+      <dt>
+          {{this.dict}}
+      </dt>
+      <dd>
+          <p>
+            {{this.def}}<br/>
+            {{#if this.syn}}
+                <i>Synonyms: </i>
+              {{#each this.syn}}
+                  <a href="/lookup/word?word={{this}}">{{this}}</a>,
+              {{/each}}
+            {{/if}}
+          </p>
+      </dd>
+    {{/each}}
+</dl>

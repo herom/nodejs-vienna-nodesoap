@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+var debug = require('debug')('node-soap-example1');
+var app = require('../app');
+var soap = require('soap');
+var soapURL = 'http://services.aonaware.com/DictService/DictService.asmx?WSDL';
+var soapClient = require('../util/soap-client');
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+
+  soap.createClient(soapURL, function (err, client) {
+    if(err) {
+      console.error(err);
+    } else {
+      soapClient.setClient(client);
+      console.log(client.describe());
+    }
+  });
+
+});

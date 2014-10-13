@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+<div class="alert alert-dismissable alert-warning">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4>Warning!</h4>
+    <p>
+        This little application demonstrates the usage of the <code>node-soap</code> library by calling a <strong>SOAP
+        Web Service</strong>
+        to look up a given word in a list of dictionaries.<br/>
+    </p>
+    <p>
+        It is far from being "production ready" or even "sanity" - it's just a poor "proof of concept". Have fun :)
+    </p>
+</div>
+
+<ul class="list-unstyled">
+    <li>
+        <strong>Want to know the definition of any word?</strong><br/>
+      {{> lookup-word}}
+    </li>
+  <li>
+      <hr>
+  </li>
+    <li>
+        <strong>Want to see a list of all available dictionaries?</strong><br/><a href="/lookup/dictionaries" class="btn btn-info btn-lg">Lookup Dictionaries!</a>
+    </li>
+</ul>
+
+
