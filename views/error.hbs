@@ -1,4 +1,9 @@
-<h1>{{error.message}}</h1>
+<h1>
+  {{error.message}}
+    <small>
+        <a href="/" class="btn btn-link glyphicon glyphicon-home"></a>
+    </small>
+</h1>
 <h2>{{error.status}}</h2>
 {{#if error.stack}}
   <pre>
