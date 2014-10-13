@@ -20,7 +20,13 @@ router.get('/word', function (req, res) {
         }
     )
   } else {
-    res.status(404).send();
+    res.render('error', {
+      error: {
+        message: 'Cannot search for nothing ("").',
+        status: '400 - Bad Request'
+      }
+    });
+
   }
 });
 
